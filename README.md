@@ -1,185 +1,89 @@
 <h1>Live Project</h1>
 <h2>Introduction</h2>
-<p>For the last two weeks of my time at the tech academy, I worked with my peers in a team developing a full scale MVC/MVVM Web Application in C#. Working on a legacy codebase was a great learning oppertunity for fixing bugs, cleaning up code, and adding requested features. There were some big changes that could have been a large time sink, but we used what we had to deliver what was needed on time. I saw how a good developer works with what they have to make a quality product. I worked on several back end stories that I am very proud of. Because much of the site had already been built, there were also a good deal of front end stories and UX improvements that needed to be completed, all of varying degrees of difficulty. Everyone on the team had a chance to work on front end and back end stories. Over the two week sprint I also had the opportunity to work on some other project management and team programming skills that I'm confident I will use again and again on future projects.</p>
-<p>Below are descriptions of the stories I worked on, along with code snippets and navigation links. I also have some full code files in this repo for the larger functionalities I implemented.</p>
+<p>At the conclusion of my training at the Tech Acedemy, I had the oppurtunity to work on a project with several other students and instructors acting as a team. I have had numerous oppurtunities to work on fixing bugs, cleaning up code, and adding requested features, as well as working within a group and use version control in a completley comprehensive way. We were tasked with working on a theater companie's full scale MVC Web Application in C#. Over the course of this project I had the opportunity to work on skills that I'm confident I will use again and again on future endeavers.</p>
+<p>Below are descriptions of some of the stories I worked on, along with code snippets and navigation links.</p>
 <h2>Back End Stories</h2>
 <ul>
-  <li><a href="#sorting-network-table">Sorting Network Table</a></li>
-  <li><a href="#meetup-api">Meetup API</a></li>
+  <li><a href="#sorting-network-table">Auto Implement Admin Settings</a></li>
 </ul>
-<h3><a id="user-content-sorting-network-table" class="anchor" aria-hidden="true" href="#sorting-network-table"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sorting Network Table</h3>
-<p>This page had two tables, one as part of the view, and one was a partial view. My task was to make the table on the partial view sortable by several different catagories. I wanted to do this without reloading the page.</p>
-<pre><code>   public ActionResult _OutsideNetworking(string sortOrder)
-    {
-        List&lt;JPOutsideNetworking&gt; partialViewList = new List&lt;JPOutsideNetworking&gt;();
-        partialViewList = db.JPOutsideNetworkings.ToList();
-
-        ViewBag.NameSortParm = sortOrder == "studentName" ? "studentName_desc" : "studentName";
-        ViewBag.PositionSortParm = sortOrder == "position" ? "position_desc" : "position";
-        ViewBag.CompanySortParm = sortOrder == "company" ? "company_desc" : "company";
-        ViewBag.LocationSortParm = sortOrder == "location" ? "location_desc" : "location";
-        ViewBag.StackSortParm = sortOrder == "stack" ? "stack_desc" : "stack";
-
-        switch (sortOrder)
+<h3><a id="user-content-sorting-network-table" class="anchor" aria-hidden="true" href="#sorting-network-table"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auto Implement Admin Settings</h3>
+<p>I was tasked with editing the Admin Controller, to automatically update the entries in the subscriber and productions databases when the admin updated certain settings that are set to a JSON file. After updating the SettingsUpdate method to determine if certain settings were changed, it would call new Methods to loop through the entries in their respective databases and update the set property.</p>
+<pre><code>   [HttpPost]
+        public ActionResult SettingsUpdate(AdminSettings currentSettings)
         {
-            default:
-            case "studentName":
-                partialViewList = partialViewList.OrderBy(x =&gt; x.Name).ToList();
-                break;
-            case "studentName_desc":
-                partialViewList = partialViewList.OrderByDescending(x =&gt; x.Name).ToList();
-                break;
-            case "position":
-                partialViewList = partialViewList.OrderBy(x =&gt; x.Position).ToList();
-                break;
-            case "position_desc":
-                partialViewList = partialViewList.OrderByDescending(x =&gt; x.Position).ToList();
-                break;
-            case "company":
-                partialViewList = partialViewList.OrderBy(x =&gt; x.Company).ToList();
-                break;
-            case "company_desc":
-                partialViewList = partialViewList.OrderByDescending(x =&gt; x.Company).ToList();
-                break;
-            case "location":
-                partialViewList = partialViewList.OrderBy(x =&gt; x.Location).ToList();
-                break;
-            case "location_desc":
-                partialViewList = partialViewList.OrderByDescending(x =&gt; x.Location).ToList();
-                break;
-            case "stack":
-                partialViewList = partialViewList.OrderBy(x =&gt; x.Stack).ToList();
-                break;
-            case "stack_desc":
-                partialViewList = partialViewList.OrderByDescending(x =&gt; x.Stack).ToList();
-                break;
+            string newSettings = JsonConvert.SerializeObject(currentSettings, Formatting.Indented);
+            newSettings = newSettings.Replace("T00:00:00", "");
+            string filepath = Server.MapPath(Url.Content("~/AdminSettings.json"));
+            string oldSettings = null;
+             
+            using (StreamReader reader = new StreamReader(filepath))
+            {
+               oldSettings = reader.ReadToEnd();
+            }
+            dynamic oldJSON = JObject.Parse(oldSettings);
+            dynamic newJSON = JObject.Parse(newSettings);
+            if (oldJSON.recent_definition.date != newJSON.recent_definition.date)
+            {
+                UpdateSubscribers(newJSON);
+            }
+            if (oldJSON.season_productions != newJSON.season_productions)
+            {
+                UpdateProductions(newJSON);
+            }
+            using (StreamWriter writer = new StreamWriter(filepath))
+            {
+                writer.Write(newSettings);
+                return RedirectToAction("Dashboard");
+            }
         }
 
-        return PartialView("_OutsideNetworking", partialViewList);
-    }       
-</code></pre>
-<h3><a id="user-content-meetup-api" class="anchor" aria-hidden="true" href="#meetup-api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Meetup API</h3>
-<p>I was tasked with fixing a parial view that displays information from Meetup.com. A previous developer had attempted the story with limited results. The meetup info could only be retrieved once per hour,my solution was to request meetup's info and save the results to a database. Whenever the API denied a request, the controller would use the latest data that had been saved.</p>
-<pre><code>public PartialViewResult _MeetUpApi()
-    {
-        string[] meetupRequestUrls = {//url's removed for neatness};
-
-        var events = new List&lt;JPMeetupEvent&gt;();
-        try
+        private void UpdateSubscribers(dynamic newJSON)
         {
-            var responseStrings = new List&lt;string&gt;();
-            foreach (var url in meetupRequestUrls)
+            DateTime recentDef = newJSON.recent_definition.date;
+            foreach (var subscriber in db.Subscribers)
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-
-                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                using (Stream stream = response.GetResponseStream())
-                using (StreamReader reader = new StreamReader(stream))
+                if (recentDef >= subscriber.LastDonated)
                 {
-                    responseStrings.Add(reader.ReadToEnd());
+                    subscriber.RecentDonor = false;
+                }
+                else
+                {
+                    subscriber.RecentDonor = true;
                 }
             }
-
-            foreach (var str in responseStrings)
-            {
-                events.AddRange(ConvertMeetupStringToJPMeetupEvents(str));
-            }
-            events = FilterPastEvents(events);
-            events = FilterDuplicateEvents(events);
-
-            //remove old events from table
-            db.JPMeetupEvents.RemoveRange(db.JPMeetupEvents);
-
-            db.JPMeetupEvents.AddRange(events);
-
             db.SaveChanges();
         }
 
-        //if there is a web exception, we need to load events from the database instead
-        catch (WebException)
+        private void UpdateProductions(dynamic newJSON)
         {
-            foreach (var meetupEvent in db.JPMeetupEvents)
+            int fall = newJSON.season_productions.fall;
+            int winter = newJSON.season_productions.winter;
+            int spring = newJSON.season_productions.spring;
+            foreach (var production in db.Productions)
             {
-                events.Add(meetupEvent);
+                if (production.ProductionId == fall || production.ProductionId == winter || production.ProductionId == spring)
+                {
+                    production.IsCurrent = true;
+                }
+                else
+                {
+                    production.IsCurrent = false;
+                }
             }
-                events = FilterPastEvents(events);
-        }                                   
-        return PartialView("_MeetUpApi", events);
-    }
-</code></pre>
-<p>I had to write a helper function to convert the string that comes in from the API to our event model.</p>
-<pre><code>    List&lt;JPMeetupEvent&gt; ConvertMeetupStringToJPMeetupEvents(string meetup)
-    {
-        var events = new List&lt;JPMeetupEvent&gt;();
-        var meetupSB = new StringBuilder(meetup);            
-        while (true)
-        {
-            var meetupEvent = new JPMeetupEvent();
-
-            int nameIndex = meetupSB.ToString().IndexOf("\"name\"");
-            if (nameIndex == -1) break;
-            meetupSB.Remove(0, nameIndex + 8);
-            int commaIndex = meetupSB.ToString().IndexOf(",");
-            meetupEvent.JPEventName = meetupSB.ToString().Substring(0,commaIndex - 1);
-
-            int dateIndex = meetupSB.ToString().IndexOf("\"local_date\"");                
-            meetupSB.Remove(0, dateIndex + 14);
-            commaIndex = meetupSB.ToString().IndexOf(",");
-            var date = DateTime.Parse(meetupSB.ToString().Substring(0, commaIndex - 1));
-            meetupEvent.JPEventDate = date;
-
-            int linkIndex = meetupSB.ToString().IndexOf("\"link\"");              
-            meetupSB.Remove(0, linkIndex + 8);
-            commaIndex = meetupSB.ToString().IndexOf(",");
-            meetupEvent.JPEventLink = meetupSB.ToString().Substring(0, commaIndex - 1);
-
-            events.Add(meetupEvent);
-        }
-
-
-        return events;
-    }
-</code></pre>
-<p>I also had to make sure the controller filtered out events that had already passed. Because multiple meetup groups sometimes post the same event, or would have several entries for a weekly event, I had to filter duplicate events and display the earliest one.</p>
-<pre><code>    List&lt;JPMeetupEvent&gt; FilterPastEvents(List&lt;JPMeetupEvent&gt; events)
-    {
-        var filteredList = new List&lt;JPMeetupEvent&gt;();
-
-        foreach (var meetupEvent in events)
-        {
-            if (meetupEvent.JPEventDate.CompareTo(DateTime.Now) &gt;= 0)
-            {
-                filteredList.Add(meetupEvent);
-            }
-        }
-
-        return filteredList;
-    }
-
-    //will keep the earliest of the duplicates
-    List&lt;JPMeetupEvent&gt; FilterDuplicateEvents(List&lt;JPMeetupEvent&gt; events)
-    {
-        var filteredEvents = new List&lt;JPMeetupEvent&gt;();
-        var eventNames = new List&lt;string&gt;();
-        foreach (var meetupEvent in events)
-        {
-            if (!eventNames.Contains(meetupEvent.JPEventName))
-            {
-                eventNames.Add(meetupEvent.JPEventName);
-                filteredEvents.Add(meetupEvent);
-            }
-        }
-        return filteredEvents;
-    }
+            db.SaveChanges();
+        }       
 </code></pre>
 <p><em>Jump to: <a href="#front-end-stories">Front End Stories</a>, <a href="#back-end-stories">Back End Stories</a>, <a href="#other-skills-learned">Other Skills</a>, <a href="#live-project">Page Top</a></em></p>
 <h2><a id="user-content-front-end-stories" class="anchor" aria-hidden="true" href="#front-end-stories"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Front End Stories</h2>
 <ul>
-<li><a href="#button-sizing-bug">Button Sizing Bug</a></li>
+ <li><a href="#button-sizing-bug">Subscriber NavBar</a></li>
+ <li><a href="#button-sizing-bug">Button Sizing Bug</a></li>
+ <li><a href="#button-sizing-bug">Button Sizing Bug</a></li>
+ <li><a href="#button-sizing-bug">Button Sizing Bug</a></li>
 </ul>
-<h3><a id="user-content-button-sizing-bug" class="anchor" aria-hidden="true" href="#button-sizing-bug"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Button Sizing Bug</h3>
-<p>This story was to fix an issue where buttons on the navbar would get smaller when clicked. It took some time to realize the font size was actually staying the same, and it was the font that was changing. From there, I just changed the a:active selector for those elements on the style sheet to use the same font.</p>
+<h3><a id="user-content-button-sizing-bug" class="anchor" aria-hidden="true" href="#button-sizing-bug"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subscriber NavBar</h3>
+<p>I needed to create a navbar for the Subscriber Area. It presented a new task to me as the project as the subscriber area sequestered from the rest of the project, so navigating between the two took some added lines. Also, I got to hone my skills with responsiveness and working with boostraps collapse classes.</p>
+<img src="Images/Sub_Navbar_After_1.png">
 <p><em>Jump to: <a href="#front-end-stories">Front End Stories</a>, <a href="#back-end-stories">Back End Stories</a>, <a href="#other-skills-learned">Other Skills</a>, <a href="#live-project">Page Top</a></em></p>
 <h2><a id="user-content-other-skills-learned" class="anchor" aria-hidden="true" href="#other-skills-learned"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other Skills Learned</h2>
 <ul>
