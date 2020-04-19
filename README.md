@@ -77,13 +77,27 @@
 <h2><a id="user-content-front-end-stories" class="anchor" aria-hidden="true" href="#front-end-stories"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Front End Stories</h2>
 <ul>
  <li><a href="#button-sizing-bug">Subscriber NavBar</a></li>
- <li><a href="#button-sizing-bug">Button Sizing Bug</a></li>
- <li><a href="#button-sizing-bug">Button Sizing Bug</a></li>
- <li><a href="#button-sizing-bug">Button Sizing Bug</a></li>
+ <li><a href="#button-sizing-bug2">Login Failure Page</a></li>
+ <li><a href="#button-sizing-bug3">Subscriber Create Page</a></li>
+ <li><a href="#button-sizing-bug4">All Productions Page</a></li>
 </ul>
 <h3><a id="user-content-button-sizing-bug" class="anchor" aria-hidden="true" href="#button-sizing-bug"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subscriber NavBar</h3>
 <p>I needed to create a navbar for the Subscriber Area. It presented a new task to me as the project as the subscriber area sequestered from the rest of the project, so navigating between the two took some added lines. Also, I got to hone my skills with responsiveness and working with boostraps collapse classes.</p>
-<img src="Images/Sub_Navbar_After_1.png">
+<img src="Screenshots/Sub_Navbar_After_1.png">
+<h3><a id="user-content-button-sizing-bug2" class="anchor" aria-hidden="true" href="#button-sizing-bug"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Login Failure Page</h3>
+<p>I was given a very open ended story to improve the styling of the login failure page. I switched the colors to match the overall theme of teh website, as well as creating buttons that could be used on several different pages throughout.</p>
+<img src="Screenshots/Login_Error_Before.png">
+<img src="Screenshots/Login_Error_After.png">
+<h3><a id="user-content-button-sizing-bug3" class="anchor" aria-hidden="true" href="#button-sizing-bug"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subscriber Create Page</h3>
+<p>There were two parts to this story. First I noticed that someone had accidently overridden a bootstrap class which was causing the contents to be invisible, so I was able to adjust that and give the page some basic styling. Second, I needed to create different views depending on the user's access privileges.</p>
+<img src="Screenshots/Sub_Create_Admin.png">
+<img src="Screenshots/Sub_Create_menber.png">
+<img src="Screenshots/Sub_Create_Logged_Out.png">
+<h3><a id="user-content-button-sizing-bug4" class="anchor" aria-hidden="true" href="#button-sizing-bug"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>All Productions Page</h3>
+<p>The original page had all the productions listed one after the other on the left hand side of the page, which did not look ggod and was impratical. First I utilized bootstraps column system to make use of the entire page, I also changed the styling to give a cleaner look. Then I made the details link to clicking on the picture, rather than a button, and set the CRUD functions to only be visible when the user was signed in as an admin.</p>
+<img src="Screenshots/Production_Index_Before_2.png">
+<img src="Screenshots/Production_Index_After_1.png">
+<img src="Screenshots/Production_Index_After_2.png">
 <p><em>Jump to: <a href="#front-end-stories">Front End Stories</a>, <a href="#back-end-stories">Back End Stories</a>, <a href="#other-skills-learned">Other Skills</a>, <a href="#live-project">Page Top</a></em></p>
 <h2><a id="user-content-other-skills-learned" class="anchor" aria-hidden="true" href="#other-skills-learned"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other Skills Learned</h2>
 <ul>
