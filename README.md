@@ -154,15 +154,15 @@
 <img src="Screenshots/Sub_Create_menber.png">
 <img src="Screenshots/Sub_Create_Logged_Out.png">
 <h3><a id="user-content-button-sizing-bug4" class="anchor" aria-hidden="true" href="#button-sizing-bug"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>All Productions Page</h3>
-<p>The original page had all the productions listed one after the other on the left hand side of the page, which did not look ggod and was impratical. First I utilized bootstraps column system to make use of the entire page, I also changed the styling to give a cleaner look. Then I made the details link to clicking on the picture, rather than a button, and set the CRUD functions to only be visible when the user was signed in as an admin. Finally, I adjusted it so that the page would better respond to the screen size, going from three down to two per row, and finally displaying them all in one on mobile view.</p>
+<p>The original page had all the productions listed one after the other on the left hand side of the page, which did not look good and was impratical. First I utilized bootstraps column system to make use of the entire page, I also changed the styling to give a cleaner look. Then I made the details link to clicking on the picture, rather than a button, and set the CRUD functions to only be visible when the user was signed in as an admin. Finally, I adjusted it so that the page would better respond to the screen size, going from three down to two per row, and finally displaying them all in one on mobile view.</p>
 <img src="Screenshots/Production_Index_Before_2.png">
 <img src="Screenshots/Production_Index_After_1.png">
 <img src="Screenshots/Production_Index_After_2.png">
 <p><em>Jump to: <a href="#front-end-stories">Front End Stories</a>, <a href="#back-end-stories">Back End Stories</a>, <a href="#other-skills-learned">Other Skills</a>, <a href="#live-project">Page Top</a></em></p>
 <h2><a id="user-content-other-skills-learned" class="anchor" aria-hidden="true" href="#other-skills-learned"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other Skills Learned</h2>
 <ul>
-<li>Working with a group of developers to identify front and back end bugs to the improve usability of an application</li>
-<li>Improving project flow by communicating about who is working in what areas and hpw to best navigate the project as a whole</li>
+<li>Working with a group of developers to identify front and back end bugs to improve usability of an application</li>
+<li>Improving project flow by communicating about who is working in what areas and how to best navigate the project as a whole</li>
 <li>Learning new efficiencies from other developers by observing their workflow and asking questions</li>
 <li>Practice with team programming/pair programming when one developer runs into a bug they cannot immediately solve</li>
 </ul>
