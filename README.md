@@ -1,6 +1,6 @@
 <h1>Live Project</h1>
 <h2>Introduction</h2>
-<p>At the conclusion of my training at the Tech Academy, I had the opportunity to work on a project with several other students and instructors acting as a team. I have had numerous opportunities to work on fixing bugs, cleaning up code, and adding requested features, as well as working within a group and using version control in a completely comprehensive way. We were tasked with working on a theater company's full scale MVC Web Application in C#. Over the course of this project I had the opportunity to work on skills that I'm confident I will use again and again on future endeavors.</p>
+<p>I had the opportunity to work on a project with several other interns and seasoned professionals acting as a team. I have had numerous opportunities to work on fixing bugs, cleaning up code, and adding requested features, as well as working within a group and using version control in a completely comprehensive way. We were tasked with working on a theater company's full scale MVC Web Application in C#. Over the course of this project I had the opportunity to work on skills that I'm confident I will use again and again on future endeavors.</p>
 <p>Below are descriptions of some of the stories I worked on, along with code snippets, screenshots and navigation links.</p>
 <p><em>Jump to: <a href="#front-end-stories">Front End Stories</a>, <a href="#back-end-stories">Back End Stories</a>, <a href="#other-skills-learned">Other Skills</a></em></p>
 <h2>Back End Stories</h2>
